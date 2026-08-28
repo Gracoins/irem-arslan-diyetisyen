@@ -195,6 +195,54 @@ footer p{font-size:.94rem;margin-bottom:9px}
   .igrid,.rgrid,.fgrid{grid-template-columns:1fr}
   .iphoto{max-width:400px;margin:0 auto}
 }
+
+/* ── PREMIUM OVERRIDE (bu anlaşmaya özel, sablon.html'e dokunulmadı) ── */
+.rv{filter:blur(6px)}
+.rv.in{filter:blur(0)}
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+
+/* yüzen ada nav */
+header{background:transparent!important;box-shadow:none!important}
+header.s{background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
+.hrow{background:rgba(255,255,255,.08);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:10px 12px 10px 30px;max-width:900px;
+  margin:0 auto;box-shadow:0 8px 32px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.1);
+  transition:background .5s cubic-bezier(.32,.72,0,1),box-shadow .5s cubic-bezier(.32,.72,0,1),border-color .5s cubic-bezier(.32,.72,0,1)}
+header.s .hrow{background:rgba(var(--cream-rgb,250,246,248),.85);border-color:rgba(0,0,0,.08);
+  box-shadow:0 14px 40px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.6)}
+body.menu-acik .hrow,body.menu-acik header.s .hrow{background:transparent!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important;border-color:transparent!important}
+.hcta{margin-right:2px}
+
+/* eyebrow: pill rozet */
+.eyebrow{display:inline-block;padding:6px 18px;border-radius:100px;background:var(--cream-2);
+  border:1px solid var(--line)}
+.fiyat .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+
+/* button-in-button trailing icon */
+.btn{padding-right:10px}
+.btn-ic{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);
+  display:inline-flex;align-items:center;justify-content:center;font-size:.92rem;flex:none;
+  transition:.4s cubic-bezier(.32,.72,0,1)}
+.btn-o .btn-ic{background:rgba(255,255,255,.16)}
+.btn:hover .btn-ic{transform:translate(3px,-2px) scale(1.08)}
+.form .btn{padding-right:10px}
+
+/* double-bezel: dış kabuk + iç çekirdek */
+.dbz{padding:6px;border-radius:1.95rem;background:linear-gradient(155deg,rgba(255,255,255,.55),rgba(255,255,255,.05));
+  box-shadow:0 1px 1px rgba(255,255,255,.5) inset,0 22px 46px -24px rgba(0,0,0,.32);
+  transition:.5s cubic-bezier(.32,.72,0,1)}
+.dbz:hover{transform:translateY(-4px)}
+.dbz .card{border-radius:1.65rem!important;background:var(--cream)!important;border:none!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.8),inset 0 0 0 1px rgba(0,0,0,.045)!important;
+  height:100%}
+.dbz .card:hover{transform:none!important;box-shadow:inset 0 1px 1px rgba(255,255,255,.8),inset 0 0 0 1px rgba(0,0,0,.045)!important}
+.dbz-ph{padding:7px;border-radius:calc(3/4*1px + 1.6rem);background:linear-gradient(155deg,rgba(255,255,255,.5),rgba(255,255,255,.04));
+  box-shadow:0 1px 1px rgba(255,255,255,.45) inset,0 26px 50px -22px rgba(0,0,0,.34)}
+.dbz-ph .iphoto{border-radius:1.3rem!important}
+.dbz-g{padding:5px;border-radius:1.1rem;background:linear-gradient(155deg,rgba(255,255,255,.4),rgba(255,255,255,.03));
+  box-shadow:0 1px 1px rgba(255,255,255,.4) inset,0 16px 32px -18px rgba(0,0,0,.28)}
+.dbz-g .gitem{border-radius:.85rem!important}
 </style>
 </head>
 <body>
@@ -213,15 +261,15 @@ footer p{font-size:.94rem;margin-bottom:9px}
     <p class="hsub">Balıkesir'de sürdürülebilir beslenme danışmanlığı — Google'da 5.0 puan, 21 değerlendirme.</p>
     <div class="stars">★★★★★ <b>5.0</b> · 21 Google değerlendirmesi</div>
     <div class="hbtns">
-      <a class="btn btn-g" href="https://wa.me/905334517886" target="_blank">WhatsApp'tan randevu</a>
-      <a class="btn btn-o" href="#hizmetler">Hizmetleri gör</a>
+      <a class="btn btn-g" href="https://wa.me/905334517886" target="_blank">WhatsApp'tan randevu<span class="btn-ic">↗</span></a>
+      <a class="btn btn-o" href="#hizmetler">Hizmetleri gör<span class="btn-ic">↓</span></a>
     </div>
   </div>
   <div class="scroll"></div>
 </div>
 
 <section class="imza" id="hakkimizda"><div class="w igrid">
-  <div class="iphoto rv"><img src="foto/irem-portre.jpg" alt="Diyetisyen İrem Arslan" loading="lazy" ></div>
+  <div class="dbz-ph"><div class="iphoto rv"><img src="foto/irem-portre.jpg" alt="Diyetisyen İrem Arslan" loading="lazy" ></div></div>
   <div class="rv">
     <span class="eyebrow">Hakkımızda</span>
     <h2 class="stitle">5.0 puanın arkasındaki diyetisyen</h2>
@@ -236,7 +284,7 @@ footer p{font-size:.94rem;margin-bottom:9px}
     <h2 class="stitle">Danışmanlık hizmetleri</h2>
     <p class="slead">Her danışan için süreç ücretsiz bir ön görüşmeyle başlar.</p>
   </div>
-  <div class="svc"><div class="card rv"><h3>Ücretsiz Ön Görüşme</h3><p>İlk adım her zaman ücretsiz bir görüşme; ihtiyaç ve hedefler birlikte konuşulur.</p></div><div class="card rv"><h3>Kişiye Özel Beslenme Programı</h3><p>Yaş, yaşam tarzı ve hedeflere göre kişiye özel hazırlanan beslenme planı.</p></div><div class="card rv"><h3>Sürdürülebilir Beslenme Danışmanlığı</h3><p>Kısa süreli diyet değil, günlük hayata gerçekten oturan, uzun vadeli bir düzen kurma yaklaşımı.</p></div><div class="card rv"><h3>Online / Yüz Yüze Takip</h3><p>Süreç boyunca düzenli takiple programın ihtiyaca göre güncellenmesi.</p></div></div>
+  <div class="svc"><div class="dbz"><div class="card rv"><h3>Ücretsiz Ön Görüşme</h3><p>İlk adım her zaman ücretsiz bir görüşme; ihtiyaç ve hedefler birlikte konuşulur.</p></div></div><div class="dbz"><div class="card rv"><h3>Kişiye Özel Beslenme Programı</h3><p>Yaş, yaşam tarzı ve hedeflere göre kişiye özel hazırlanan beslenme planı.</p></div></div><div class="dbz"><div class="card rv"><h3>Sürdürülebilir Beslenme Danışmanlığı</h3><p>Kısa süreli diyet değil, günlük hayata gerçekten oturan, uzun vadeli bir düzen kurma yaklaşımı.</p></div></div><div class="dbz"><div class="card rv"><h3>Online / Yüz Yüze Takip</h3><p>Süreç boyunca düzenli takiple programın ihtiyaca göre güncellenmesi.</p></div></div></div>
 </div></section>
 
 
@@ -258,7 +306,7 @@ footer p{font-size:.94rem;margin-bottom:9px}
     <div class="fld"><label>Hizmet</label><select id="f_hiz"><option>Ücretsiz Ön Görüşme</option><option>Kişiye Özel Beslenme Programı</option><option>Sürdürülebilir Beslenme Danışmanlığı</option><option>Online / Yüz Yüze Takip</option><option>Diğer / emin değilim</option></select></div>
     <div class="fld"><label>Tercih ettiğiniz gün / saat</label><input id="f_zaman" placeholder="Örn. Cuma öğleden sonra"></div>
     <div class="fld"><label>Eklemek istedikleriniz</label><textarea id="f_not" placeholder="İsteğe bağlı"></textarea></div>
-    <a class="btn btn-g" id="f_gonder" href="#" target="_blank">WhatsApp'ta gönder</a>
+    <a class="btn btn-g" id="f_gonder" href="#" target="_blank">WhatsApp'ta gönder<span class="btn-ic">↗</span></a>
     <p class="rnote">Form bilgileri kaydedilmez, doğrudan WhatsApp mesajına dönüşür.</p>
   </div>
 </div></section>
@@ -269,7 +317,7 @@ footer p{font-size:.94rem;margin-bottom:9px}
     <h2 class="stitle">Çalışmalarımız</h2>
     <p class="slead">İçeriklerimizden ve danışan tariflerinden kareler.</p>
   </div>
-  <div class="gal" style="grid-template-columns:minmax(0,320px);justify-content:center;max-width:320px;margin-left:auto;margin-right:auto"><div class="gitem rv"><img src="foto/kuru-domates-salatasi.jpg" alt="Kuru domates salatası tarifi" loading="lazy" ></div></div>
+  <div class="gal" style="grid-template-columns:minmax(0,320px);justify-content:center;max-width:320px;margin-left:auto;margin-right:auto"><div class="dbz-g"><div class="gitem rv"><img src="foto/kuru-domates-salatasi.jpg" alt="Kuru domates salatası tarifi" loading="lazy" ></div></div></div>
 </div></section>
 
 
